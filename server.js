@@ -13,10 +13,11 @@ app.use(express.json());
 app.use("/api/courses", courseRoutes);
 
 mongoose
+
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
-    app.listen(5000, () =>
+    app.listen(import.meta.env.PORT, () =>
       console.log("Server running on port 5000")
     );
   })
