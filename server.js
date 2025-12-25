@@ -17,7 +17,7 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
-    app.listen(import.meta.env.PORT, () =>
+    app.listen(process.env.PORT, () =>
       console.log("Server running on port 5000")
     );
   })
